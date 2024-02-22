@@ -1,0 +1,6 @@
+service: svcless-20240222
+frameworkVersion: 3.38.0
+
+provider:
+  name: aws
+  runtime: nodejs18.x
