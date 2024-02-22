@@ -1,16 +1,25 @@
-service: svcless-20240222
+service: richie-sls-22-feb
 frameworkVersion: '3'
 
 provider:
   name: aws
   runtime: nodejs18.x
+  region: ap-southeast-1
 
-function:
+functions:
   api:
     handler: index.handler
-    event:
+    events:
       - httpApi:
           path: /
           method: get
+  
+  chia:
+    handler: index.handler
+    events:
+      - httpApi:
+          path: /
+          method: post
+
 plugins:
   - serverless-offline
