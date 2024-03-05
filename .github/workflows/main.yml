@@ -45,4 +45,4 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     - name: Create secrets in AWS Secrets Manager
       run: |
-        aws secretsmanager create-secret --name ${{secrets.SECRET_NAME}} --secret-string '{"username": "user1234", "password": "${{secrets.SECRET_PASSWORD}}"}'
+        aws secretsmanager create-secret --name "${{secrets.SECRET_NAME}}" --secret-string '{"username": "user1234", "password": "${{secrets.SECRET_PASSWORD}}"}'
